@@ -13,6 +13,12 @@ app.get("/", (req, res) => {
 app.set("/hello", (req, res) => {
     res.send("hello");
 })
+
+app.get("/rolldice", (req, res) => {
+    let diceVal = Math.floor(Math.random()*6) + 1;
+    res.render("rolldice.ejs", { diceVal });
+})
+
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
 })
